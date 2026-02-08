@@ -1,15 +1,3 @@
-# Dependencies
-node_modules/
-
-# Environment
-.env
-.env.local
-
-# Logs & Data
-backend/data.json
-backend/notifications.log
-*.log
-
 # OS files
 .DS_Store
 Thumbs.db
@@ -21,6 +9,3 @@ desktop.ini
 
 # Vercel
 .vercel/
-
-# PHP (not needed for Vercel)
-backend/saveResponse.php
