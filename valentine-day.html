@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>❤️ Happy Valentine's Day, Aditi!</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>">
+</head>
+<body class="page-valentine" data-page="valentine">
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <span class="loading-heart">❤️</span>
+    <p class="loading-text">The grand finale for Aditi...</p>
+  </div>
+
+  <!-- Music Toggle -->
+  <button class="music-toggle" id="musicToggle" title="Toggle Music">🔇</button>
+
+  <!-- Main Content -->
+  <div class="page-wrapper page-transition">
+    <div class="card">
+      <div class="day-badge" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+        ❤️ 14th February — Valentine's Day
+      </div>
+
+      <span class="emoji-large" style="font-size: 6rem;">❤️</span>
+
+      <h1 class="main-title glow-text" style="font-size: 3.2rem; color: #e74c3c;">
+        Happy Valentine's Day,<br>Aditi ❤️
+      </h1>
+
+      <p class="sub-title" style="color: #e84393; font-size: 1.8rem;">
+        The day I've been waiting for...
+      </p>
+
+      <div class="love-divider">❤️ 💖 ❤️</div>
+
+      <!-- Love Letter -->
+      <div class="love-letter">
+        <p>My Dearest Aditi,</p>
+        <p>
+          From the very first moment you walked into my life,
+          everything changed. The colors got brighter,
+          the music got sweeter, and my heart started
+          beating to the rhythm of your name. 💖
+        </p>
+        <p>
+          This Valentine Week, I've tried to show you
+          just a fraction of what you mean to me —
+          but honestly, no roses, no chocolates,
+          no words could ever be enough. 🌹
+        </p>
+        <p>
+          You are my first thought in the morning,
+          my last dream at night, and every beautiful
+          moment in between. You make ordinary days
+          extraordinary just by being in them. ✨
+        </p>
+        <p>
+          I don't need a special day to love you, Aditi.
+          Every single day with you is Valentine's Day
+          for me. But today, I just want the whole world
+          to know — <strong>You are my everything.</strong> 💕
+        </p>
+        <p>
+          I love you more than yesterday,
+          less than tomorrow,
+          and infinitely beyond what words can say. 🥰
+        </p>
+        <p class="signature">
+          Forever & Always Yours 💍<br>
+          — Your Valentine ❤️
+        </p>
+      </div>
+
+      <div class="love-divider">💕 💕 💕</div>
+
+      <div class="quote-box" style="border-left-color: #e74c3c;">
+        "You don't love someone for their looks, or their clothes,
+        or for their fancy car, but because they sing a song
+        only you can hear." — Oscar Wilde 🎵💖
+      </div>
+
+      <!-- Final Promise -->
+      <div style="margin: 25px 0; padding: 25px; background: linear-gradient(135deg, rgba(231, 76, 60, 0.05), rgba(232, 67, 147, 0.05)); border-radius: 20px; border: 1px solid rgba(231, 76, 60, 0.15);">
+        <p style="font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: #e74c3c; margin-bottom: 10px;">
+          My Valentine Promise 💍
+        </p>
+        <p style="font-size: 1rem; color: #5a3045; line-height: 1.8;">
+          I promise to love you in your highs and lows,
+          in your smiles and tears, in your strengths and fears.
+          You are my forever, Aditi. 💖
+        </p>
+      </div>
+
+      <!-- Forever Button -->
+      <button class="btn btn-love" id="foreverBtn" onclick="foreverClick()" style="font-size: 1.3rem; padding: 18px 50px; margin-top: 20px;">
+        Forever Yours 💍
+      </button>
+
+      <p style="margin-top: 20px; font-size: 0.85rem; color: #b07090; opacity: 0.7;">
+        Made with infinite love, just for you Aditi 💖
+      </p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+
+    function foreverClick() {
+      const btn = document.getElementById('foreverBtn');
+      const rect = btn.getBoundingClientRect();
+
+      // Massive hearts burst
+      createHeartsBurst(rect.left + rect.width / 2, rect.top + rect.height / 2);
+      createConfetti(6000);
+
+      // Create a beautiful overlay
+      setTimeout(() => {
+        const overlay = document.createElement('div');
+        overlay.className = 'success-overlay';
+        overlay.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.97), rgba(255,228,236,0.97))';
+        overlay.innerHTML = `
+          <span style="font-size: 6rem; display: block; margin-bottom: 20px; animation: bounceEmoji 1.5s ease-in-out infinite;">💍❤️💍</span>
+          <h1 class="main-title glow-text" style="color: #e74c3c; font-size: 2.8rem;">
+            Forever & Always, Aditi 💖
+          </h1>
+          <p class="love-message" style="opacity: 1; font-size: 1.3rem; max-width: 500px;">
+            You are the best thing that has ever happened to me.
+            Thank you for being my Valentine, today and every day. ❤️
+          </p>
+          <div class="love-divider">💕 ✨ 💕</div>
+          <p style="font-family: 'Sacramento', cursive; font-size: 2.5rem; color: #e84393; margin-top: 20px;">
+            I Love You, Aditi 💖
+          </p>
+          <p style="margin-top: 30px; font-family: 'Quicksand', sans-serif; font-size: 0.95rem; color: #b07090; opacity: 0.7;">Made with infinite love 💖</p>
+        `;
+        document.body.appendChild(overlay);
+        createConfetti(4000);
+      }, 1000);
+
+      // Send to backend
+      sendToBackend('response', {
+        name: 'Aditi',
+        day: 'valentine-day',
+        response: 'FOREVER',
+        timestamp: new Date().toISOString()
+      });
+    }
+  </script>
+</body>
+</html>

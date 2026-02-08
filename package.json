@@ -1,0 +1,21 @@
+{
+  "name": "valentine-week-for-aditi",
+  "version": "1.0.0",
+  "description": "💖 A complete Valentine Week interactive website made with love for Aditi",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js"
+  },
+  "keywords": [
+    "valentine",
+    "love",
+    "aditi",
+    "romantic"
+  ],
+  "author": "With Love 💖",
+  "license": "MIT",
+  "dependencies": {
+    "nodemailer": "^8.0.0"
+  }
+}

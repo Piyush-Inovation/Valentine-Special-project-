@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💋 Kiss Day — For Aditi</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💋</text></svg>">
+</head>
+<body class="page-kiss" data-page="kiss">
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <span class="loading-heart">💋</span>
+    <p class="loading-text">Sealing with a kiss for Aditi...</p>
+  </div>
+
+  <!-- Music Toggle -->
+  <button class="music-toggle" id="musicToggle" title="Toggle Music">🔇</button>
+
+  <!-- Main Content -->
+  <div class="page-wrapper page-transition">
+    <div class="card">
+      <div class="day-badge">💋 13th February — Kiss Day</div>
+
+      <span class="emoji-large">💋</span>
+
+      <h1 class="main-title">
+        A Kiss to Seal My<br>Love for You, Aditi 💖
+      </h1>
+
+      <p class="sub-title">Some things are better said without words 💋</p>
+
+      <!-- Flying Kisses Container -->
+      <div class="kiss-container" id="kissContainer"></div>
+
+      <p class="love-message">
+        A kiss is the most beautiful way to say
+        what my heart feels but my words can't express. 💕
+        <br><br>
+        Every kiss carries a piece of my soul,
+        and I give them all to you, Aditi. 🥰
+        <br><br>
+        May this kiss remind you how deeply,
+        how completely, how infinitely I love you. ✨💖
+      </p>
+
+      <div class="love-divider">💋 💕 💋</div>
+
+      <div class="quote-box">
+        "A kiss is a lovely trick designed by nature
+        to stop speech when words become superfluous." — Ingrid Bergman 💋
+      </div>
+
+      <!-- Send a kiss interaction -->
+      <div style="margin: 20px 0; padding: 15px; background: linear-gradient(135deg, rgba(253, 121, 168, 0.1), rgba(239, 154, 154, 0.1)); border-radius: 15px;">
+        <p style="font-size: 1rem; color: #6b4a5a; margin-bottom: 10px;">
+          Blow a kiss to Aditi! 😘
+        </p>
+        <button class="btn btn-yes" id="kissBtn" onclick="blowKiss()" style="font-size: 1.2rem; padding: 12px 30px;">
+          😘 Muaaah!
+        </button>
+        <p id="kissMessage" style="margin-top: 10px; font-family: 'Dancing Script', cursive; font-size: 1.1rem; color: #e84393; display: none;"></p>
+      </div>
+
+      <a href="valentine-day.html" class="btn btn-love" style="margin-top: 15px; display: inline-block; text-decoration: none;">
+        Final Surprise ❤️➡️
+      </a>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    const kissMessages = [
+      "💋 Aditi felt that one! 😘",
+      "💖 That was the sweetest! 🥰",
+      "✨ Another kiss received! 💕",
+      "😘 Aditi is blushing now! 🌸",
+      "💗 Keep them coming! 💋",
+      "🥰 She loved that one! 💖"
+    ];
+    let kissCount = 0;
+
+    function blowKiss() {
+      kissCount++;
+      const msgEl = document.getElementById('kissMessage');
+      msgEl.textContent = kissMessages[kissCount % kissMessages.length];
+      msgEl.style.display = 'block';
+
+      // Hearts burst
+      const btn = document.getElementById('kissBtn');
+      const rect = btn.getBoundingClientRect();
+      createHeartsBurst(rect.left + rect.width / 2, rect.top + rect.height / 2);
+
+      sendToBackend('kiss', {
+        name: 'Aditi',
+        day: 'kiss-day',
+        kissCount: kissCount,
+        timestamp: new Date().toISOString()
+      });
+    }
+  </script>
+</body>
+</html>
